@@ -1,0 +1,12 @@
+<section class="projects">
+  <h2>My Projects</h2>
+  <div class="project-grid" [@listAnimation]="projects.length">
+    <div class="project-card" *ngFor="let project of projects">
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.description }}</p>
+      <!-- <p><img [src]="project.image" alt="Profile Picture"></p> -->
+       <p><a [href]="project.link" target="_blank">{{ project.link }}</a>
+       </p>
+    </div>
+  </div>
+</section>
