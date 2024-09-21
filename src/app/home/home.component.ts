@@ -32,10 +32,23 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   showIntro: boolean = false;
-
+  des:boolean = false;
+  showFirstMessage: boolean = true;
+  showThirdMessage:boolean=false;
   ngOnInit() {
     setTimeout(() => {
       this.showIntro = true;
     }, 1000); // Delay of 1 second (1000 milliseconds)
+
+    setTimeout(() => {
+      this.des = true;
+    }, 2000);
+    setTimeout(() => {
+      this.showFirstMessage = false;
+    }, 4000); 
+    setTimeout(()=>{
+      this.showThirdMessage =true;
+    }, 7000)
   }
+  
 }

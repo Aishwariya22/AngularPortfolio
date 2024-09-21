@@ -1,10 +1,15 @@
 <!-- <div class="homeClass"> -->
   <section class="hero">
     <h1 [@slideInFromLeft]>Welcome to My Portfolio</h1>
-    <p [@slideInFromRight]>I'm a passionate frontend developer creating amazing web experiences</p>
+    <!-- <p [@slideInFromRight]>I'm a passionate frontend developer creating amazing web experiences</p> -->
   </section>
-  <p [@fadeIn]="showIntro" class="intro">
-    <!-- <span class="emoji"><img src="assets/emoji.jpg"><img></span> Hi, my name is Aishwariya Mazumdar -->
-  </p>
+  <section class="intro" [@fadeIn]="showIntro">
+    <img src="assets/emoji.jpg"/>
+    <div class="message-boxes">
+      <p class="message-box" [class.visible]="des && showFirstMessage && !showThirdMessage">Hi, My name is Aishwariya Mazumdar</p>
+      <p class="message-box" [class.visible]="!showFirstMessage && !showThirdMessage">I'm a passionate frontend developer creating amazing web experiences</p>
+      <p class="message-box" [class.visible]="showThirdMessage"> Want to more about me? Please have a look through my Portfolio </p>
+    </div>
   <!-- <app-carausel></app-carausel> -->
-<!-- </div> -->
+<!-- </div>
+ [@fadeIn]="showIntro" -->

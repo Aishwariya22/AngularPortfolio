@@ -1,0 +1,69 @@
+.experience-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+  }
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2em;
+  }
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e0e0e0;
+  }
+  .experience-item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .bullet {
+    position: absolute;
+    left: -34px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4a90e2;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 2px #4a90e2;
+  }
+  .content {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    color: #4a90e2;
+  }
+  h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+  .period {
+    margin: 0 0 10px 0;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+  }
+  p {
+    margin: 0;
+    line-height: 1.5;
+    color: #333;
+  }

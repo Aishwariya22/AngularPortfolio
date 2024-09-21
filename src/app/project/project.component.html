@@ -1,4 +1,5 @@
-<section class="projects">
+<section class="main">
+  <div class="project">
   <h2>My Projects</h2>
   <div class="project-grid" [@listAnimation]="projects.length">
     <div class="project-card" *ngFor="let project of projects">
@@ -9,5 +10,9 @@
        </p>
     </div>
   </div>
+  </div>
+  <div class="feedbacks">
+    <h2>Feedbacks</h2>
+    <app-carausel></app-carausel>
+  </div>
 </section>
-<app-carausel></app-carausel>

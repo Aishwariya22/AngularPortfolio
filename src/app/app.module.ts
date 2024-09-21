@@ -12,6 +12,7 @@ import { CarauselComponent } from './carausel/carausel.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ExperienceComponent } from './experience/experience.component';
 @NgModule({
   declarations: [
     
@@ -30,7 +31,8 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     ProjectComponent,
     HomeComponent,
-    CarauselComponent
+    CarauselComponent,
+    ExperienceComponent
   ],
   exports: [NavbarComponent, FooterComponent],
   bootstrap: []

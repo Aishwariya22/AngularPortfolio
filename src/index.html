@@ -7,6 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations.min.js"></script>
+  <script>
+    // Redirect to home page on reload
+    (function() {
+      var l = document.location;
+      if (l.hash) {
+        if (l.hash.indexOf('#/') === 0) {
+          l.href = l.origin + '/#/home';
+        }
+      }
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>
