@@ -8,23 +8,29 @@ import { HomeComponent } from './home/home.component';
 import { ProjectComponent } from './project/project.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { CarauselComponent } from './carausel/carausel.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
-    NavbarComponent,
-    FooterComponent,
-    HomeComponent,
-    ProjectComponent,
+    
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    CommonModule,
+    ReactiveFormsModule,
+    NavbarComponent,
+    FooterComponent,
+    ProjectComponent,
+    HomeComponent,
+    CarauselComponent
   ],
   exports: [NavbarComponent, FooterComponent],
   bootstrap: []

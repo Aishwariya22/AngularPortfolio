@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { trigger, style, animate, transition, query, stagger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { link } from 'fs';
+import { CarauselComponent } from '../carausel/carausel.component';
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,CarauselComponent],
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css'],
   animations: [
