@@ -1,12 +1,12 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
-import * as THREE from 'three';
 
 interface Experience {
   title: string;
   company: string;
   period: string;
+  client: string;
   description: string;
 }
 @Component({
@@ -19,32 +19,28 @@ interface Experience {
     trigger('fadeInOut', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(20px)' }),
-        animate('500ms {{delay}}ms ease-out', 
+        animate('500ms {{delay}}ms ease-out',
           style({ opacity: 1, transform: 'translateY(0)' })
         )
       ])
     ])
   ]
 })
-export class ExperienceComponent implements OnInit{
+export class ExperienceComponent implements OnInit {
   experiences: Experience[] = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovators Inc.",
-      period: "2020 - Present",
-      description: "Led development of cutting-edge web applications using Angular and React. Implemented complex UI/UX designs and optimized performance for large-scale applications."
+      title: "System Engineer",
+      company: "Tata Consultancy Services",
+      period: "2023 -present",
+      client: "Deligenta",
+      description: " Developed a fully responsive, user-centric web application for a customer help desk using Angular, JavaScript, and related frameworks. Implemented dynamic user interfaces that adapt to various devices, ensuring seamless user experiences across platforms. Integrated real-time support features and optimized performance for faster response times, contributing to increased customer satisfaction and streamlined support processes."
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2018 - 2020",
-      description: "Developed and maintained full-stack applications using Node.js and Angular. Collaborated with cross-functional teams to deliver high-quality software solutions."
-    },
-    {
-      title: "Junior Web Developer",
-      company: "WebCraft Studios",
-      period: "2016 - 2018",
-      description: "Assisted in building responsive websites and e-commerce platforms. Gained expertise in HTML, CSS, and JavaScript while working on diverse client projects."
+      title: "Assistant System Engineer",
+      company: "Tata Consultancy Services",
+      period: "2021 -2023",
+      client: "Transamerica",
+      description: "Orchestrated UI applications, increasing user satisfaction anddecreasing support requests. Streamlined development processes with reusable components, reducing time-to-market and increasing productivity. Collaborated with senior developers to improve codebase maintainability and reduce technical debt."
     }
   ];
 

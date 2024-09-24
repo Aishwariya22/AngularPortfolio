@@ -13,12 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ExperienceComponent } from './experience/experience.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
-    
-    AboutComponent,
-    ContactComponent,
-    
+    AboutComponent,    
   ],
   imports: [
     BrowserModule,
@@ -32,7 +30,9 @@ import { ExperienceComponent } from './experience/experience.component';
     ProjectComponent,
     HomeComponent,
     CarauselComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    FontAwesomeModule,
+    ContactComponent
   ],
   exports: [NavbarComponent, FooterComponent],
   bootstrap: []
