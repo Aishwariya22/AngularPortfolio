@@ -1,18 +1,26 @@
-<section class="main">
-  <div class="project">
-  <h2>My Projects</h2>
-  <div class="project-grid" [@listAnimation]="projects.length">
-    <div class="project-card" *ngFor="let project of projects">
-      <h3>{{ project.name }}</h3>
-      <p>{{ project.description }}</p>
-      <!-- <p><img [src]="project.image" alt="Profile Picture"></p> -->
-       <p><a [href]="project.link" target="_blank">{{ project.link }}</a>
-       </p>
+<section class="projects-section">
+  <div class="container">
+    <h2 class="section-title" [@fadeInUp]>My Projects</h2>
+    <div class="project-grid" [@listAnimation]="projects.length">
+      <div class="project-card" *ngFor="let project of projects" [@fadeInUp]>
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.name">
+        </div>
+        <div class="project-content">
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="project-tags">
+            <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
+          </div>
+          <a [href]="project.link" target="_blank" class="project-link">View Project</a>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-  <div class="feedbacks">
-    <h2>Feedbacks</h2>
-    <app-carausel></app-carausel>
-  </div>
+  <!-- <div class="feedbacks-section">
+    <div class="container">
+      <h2 class="section-title" [@fadeInUp]>Feedbacks</h2>
+      <app-carausel></app-carausel>
+    </div>
+  </div> -->
 </section>
