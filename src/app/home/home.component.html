@@ -1,35 +1,45 @@
 <!-- <div class="homeClass"> -->
+<div class="home-container">
   <section class="hero">
     <h1 [@slideInFromLeft]>Welcome to My Portfolio</h1>
     <!-- <p [@slideInFromRight]>I'm a passionate frontend developer creating amazing web experiences</p> -->
   </section>
   <section class="intro" [@fadeIn]="showIntro">
-    <img src="assets/emoji.jpg"/>
+    <img src="assets/emoji.jpg" />
     <div class="message-boxes">
-      <p class="message-box" [class.visible]="des && showFirstMessage && !showThirdMessage">Hi, My name is Aishwariya Mazumdar</p>
-      <p class="message-box" [class.visible]="!showFirstMessage && !showThirdMessage">I'm a passionate frontend developer creating amazing web experiences</p>
-      <p class="message-box" [class.visible]="showThirdMessage"> Want to more about me? Please have a look through my Portfolio or you can have a chat with the chatbot.</p>
+      <p class="message-box" [class.visible]="des && showFirstMessage && !showThirdMessage">Hi, My name is Aishwariya
+        Mazumdar</p>
+      <p class="message-box" [class.visible]="!showFirstMessage && !showThirdMessage">I'm a passionate frontend
+        developer creating amazing web experiences</p>
+      <p class="message-box" [class.visible]="showThirdMessage"> Want to more about me? Please have a look through my
+        Portfolio or you can have a chat with the chatbot.</p>
     </div>
-  <!-- <app-carausel></app-carausel> -->
-<!-- </div>
+  </section>
+    <!-- <app-carausel></app-carausel> -->
+    <!-- </div>
  [@fadeIn]="showIntro" -->
- <div class="chatbot" [class.open]="isChatOpen">
-  <div class="chat-header">
-    <span>Chat with AI Assistant</span>
-    <button (click)="toggleChat()">
-      <fa-icon [icon]="isChatOpen ? faTimes : faComment"></fa-icon>
-    </button>
-  </div>
-  <div class="chat-body" *ngIf="isChatOpen">
-    <div class="messages">
-      <div *ngFor="let message of messages" class="message" [ngClass]="{'user': message.sender === 'user'}">
-        {{ message.text }}
+    <div class="chatbot" [class.open]="isChatOpen">
+      <div class="chat-header">
+        <span>Chat with AI Assistant</span>
+        <button (click)="toggleChat()">
+          <fa-icon [icon]="isChatOpen ? faTimes : faComment"></fa-icon>
+        </button>
+      </div>
+      <div class="chat-header-button">
+        <button (click)="toggleChat()">
+          <fa-icon [icon]="isChatOpen ? faTimes : faComment"></fa-icon>
+        </button>
+      </div>
+      <div class="chat-body" *ngIf="isChatOpen">
+        <div class="messages">
+          <div *ngFor="let message of messages" class="message" [ngClass]="{'user': message.sender === 'user'}">
+            {{ message.text }}
+          </div>
+        </div>
+        <form (ngSubmit)="sendMessage()" class="input-area">
+          <input type="text" name="inputMessage" [(ngModel)]="inputMessage" required placeholder="Type a message...">
+          <button type="submit" [disabled]="!inputMessage.trim()">Send</button>
+        </form>
       </div>
     </div>
-    <form (ngSubmit)="sendMessage()" class="input-area">
-      <input type="text" name="inputMessage" [(ngModel)]="inputMessage" required placeholder="Type a message...">
-      <button type="submit" [disabled]="!inputMessage.trim()">Send</button>
-    </form>
   </div>
-</div>
- 

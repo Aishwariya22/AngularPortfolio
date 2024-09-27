@@ -1,78 +1,73 @@
-.hero {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #f0f0f0;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.2em;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  .intro{
-    margin:60px;
-    display: flex;
-    align-items: center;
-    gap:30px;
-    justify-content: center;
-  }
-  /* .intro .name{
-    background-color: #f0f0f0; 
-    border: 1px solid #ccc; 
-    border-radius: 10px; 
-    padding: 15px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    max-width: 300px; 
-    word-wrap: break-word; 
-    margin: 10px 0; 
-    color: #333;
-  } */
-  .message-box {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    max-width: 400px;
-    width: 300px;
-    word-wrap: break-word;
-    margin: 10px 0;
-    color: #333;
-    /* height: 50px; */
-    position: absolute;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 1s ease; 
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
+  /* Adjust 60px to match your header height */
+  position: relative;
+  padding-bottom: 60px;
+  /* Adjust this value to match your footer height */
 }
 
-.message-box.visible {
-    opacity: 1; /* Show the element */
+.hero {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .message-boxes {
-    position: relative; /* Ensure container doesn't collapse */
-    height: 50px; /* Ensure container keeps its height */
+  position: relative;
+  height: 50px;
 }
+
+.message-box {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  max-width: 400px;
+  width: 300px;
+  word-wrap: break-word;
+  margin: 10px 0;
+  color: #333;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.message-box.visible {
+  opacity: 1;
+}
+
 .chatbot {
   position: fixed;
-  bottom: 3rem;
-  right: 1rem;
+  bottom: 70px;
+  /* Adjust this value to position above the footer */
+  right: 20px;
   width: 300px;
   background-color: white;
   border-radius: 0.5rem;
@@ -80,6 +75,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: height 0.3s ease-in-out;
   height: 48px;
+  z-index: 1000;
 }
 
 .chatbot.open {
@@ -152,4 +148,76 @@
   border-radius: 0.25rem;
   cursor: pointer;
 }
-  
+
+.chat-header-button {
+  display: none;
+}
+
+/* @keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    width: 92%;
+    padding: 30px 10px;
+    /* Reduce padding for smaller screens */
+  }
+
+  .hero h1 {
+    font-size: 1.5em !important;
+  }
+
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .message-boxes {
+    width: 90%;
+  }
+
+  .message-box {
+    width: 90%;
+    max-width: none;
+  }
+
+  .chatbot {
+    position: absolute;
+    width: 95%;
+    right: 5%;
+    left: 5%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    bottom: -40px;
+  }
+
+  .chat-header {
+    display: none;
+  }
+
+  .chat-header-button {
+    width: 10rem;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

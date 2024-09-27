@@ -1,15 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure full height and width for html and body */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Set up flexbox layout for body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  * {
-    box-sizing: inherit;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensure app-root takes full height and width */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Main content area should grow to fill available space */
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Footer should not shrink and take full width */
+app-footer {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* Ensure all images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal scrolling on all elements */
+* {
+  max-width: 100vw;
+}
